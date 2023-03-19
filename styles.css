@@ -7,7 +7,10 @@
     --hover-color: rgb(22, 51, 99);
     --card-background: rgb(247, 251, 255);
     --sidebar-background: rgb(19, 24, 27);
-    --title-font-size: 1.5rem;
+    --main-background: rgb(186, 199, 215);
+    --title-font-size: 1.8rem;
+    --hex-orange-filter: brightness(0) saturate(100%) invert(78%) sepia(77%) saturate(1753%) hue-rotate(349deg) brightness(111%) contrast(96%);    
+    --hex-grey-filter: invert(81%) sepia(97%) saturate(3713%) hue-rotate(175deg) brightness(77%) contrast(81%);
 }
 *, *::before, *::after {
     box-sizing: border-box;
@@ -22,7 +25,7 @@ html, body {
 }
 
 body {
-    background: rgb(208, 220, 220);
+    background: var(--main-background);
     display: grid;
     grid-template: 150px 2fr / minmax(30px, 250px) 2fr;
 }
@@ -80,18 +83,32 @@ header img {
     padding: 10px 25px;
     background-color: var(--button-color);
     font-size: .8rem;
-    transition: all 1s ease-out ;
+    transition: all .5s ease;
 }
 .buttons-container button:hover {
     background-color: var(--hover-color);
+    transform: translateY(-2px);
+}
+.buttons-container button:active{
+    transform: translateY(2px);
 }
 
 /*** SIDEBAR ***/
 .sidebar {
     grid-row: 1 / -1;
-    padding: 30px;
+    padding: 50px;
     color: var(--white-text);
     background-color: var(--sidebar-background);
+}
+.sidebar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.sidebar img {
+    width: 50px;
+    filter: var(--hex-orange-filter);
 }
 .sidebar-title {
     font-size: 2rem;
@@ -128,7 +145,7 @@ header img {
 .nav-icon img {
     width: 30px;
     /* to change the color of the svg icons [see CSS Filter property] */
-    filter: invert(81%) sepia(97%) saturate(3713%) hue-rotate(175deg) brightness(77%) contrast(81%);
+    filter: var(--hex-grey-filter);
 }
 
 
@@ -151,7 +168,11 @@ header img {
 .announcement-container .card, .trending-container .card{
     background-color: var(--card-background);
     border-radius: 5px;
+    border: none;
     padding: 20px;
+}
+.card {
+    box-shadow: 1px 1px 5px rgb(145, 145, 145);
 }
 /* PROJECTS */
 .project-container {
@@ -159,35 +180,59 @@ header img {
 }
 .project-container .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-auto-rows: 250px;
+    grid-template-columns: repeat(auto-fit, minmax(355px, 1fr));
+    /* grid-auto-rows: 250px; */
     gap: 20px;
 }
 .project-container .card {
+    display: flex;
+    flex-direction: column;
     background-color: var(--card-background);
     border-left: 7px solid orange;
     border-radius: 5px;
-    padding: 10px;
+    padding: 15px;
     position: relative;
 }
 .project-container .card h1 {
-    font-size: 1rem;
+    font-size: 1.3rem;
+    color: var(--dark-text);
 }
 .project-container .card p {
     margin-top: 5px;
-    font-size: .9rem;
+    font-size: 1rem;
     color: var(--light-text);
 }
-.project-container .card img {
-    width: 1.5rem;
+.card > img {
+    border-radius: 10px;
+    width: 100%;
+    margin: 10px 0;
+    box-shadow: 1px 1px 5px 1px rgb(205, 210, 211);
 }
 .project-container .icons-container {
-    position: absolute;
-    bottom: 10px;
-    right: 15px;
+    flex: 1;
+    margin-top: 10px;
     display: flex;
+    align-items: flex-end;
     justify-content: flex-end;
     gap: 10px;
+}
+.icons-container img {
+    width: 1.5rem;
+    transition: transform .5s ease-in-out;
+}
+.icons-container div:hover {
+    filter: var(--hex-orange-filter);    
+    animation: stretch-bounce .4s ease-in-out forwards;
+}
+.icons-container div:focus {
+    filter: var(--hex-orange-filter);
+    animation: expand-fade .8s ease-in-out forwards;
+}
+.icons-container a:first-of-type img:hover {
+    animation: blink .2s ease-in-out forwards;
+}
+.icons-container a:last-child img:hover {
+    transform: rotate(360deg);
 }
 /* ANNOUNCEMENTS */
 .announcement h1 {
@@ -229,4 +274,57 @@ header img {
     display: flex;
     flex-direction: column;
     gap: 3px;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes stretch-bounce {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.5);
+    }
+    50% {
+      transform: scale(0.9);
+    }
+    75% {
+      transform: scale(1.2);
+    }
+    100% {
+    transform: scale(1);
+    }
+}
+
+@keyframes expand-fade {
+    0% {
+        transform: scale(1);
+        opacity: .9;
+      }
+      25% {
+        transform: scale(1.3);
+        opacity: .6;
+      }
+      50% {
+        transform: scale(1.5);
+        opacity: .3;
+      }
+      75% {
+        transform: scale(2);
+        opacity: .1;
+      }
+      100% {
+        transform: scale(2.5);
+        opacity: 0;
+      }
 }
