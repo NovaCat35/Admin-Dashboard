@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="shortcut icon" type="image/png" href="images/dashboard.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Beth+Ellen&family=Bona+Nova&family=Cabin+Sketch:wght@400;700&family=Courier+Prime&family=Crimson+Text&family=Ewert&family=Fasthand&family=Fredericka+the+Great&family=Libre+Baskerville&family=Lily+Script+One&family=Lora&family=Merriweather:wght@400;900&family=Monoton&family=Quicksand&family=Raleway&family=Righteous&family=Special+Elite&family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
     <title>Dashboard</title>
+    <link rel="shortcut icon" type="image/png" href="images/dashboard-favicon.png">
 </head>
 <body>
     <header>
@@ -16,15 +19,15 @@
         </div>
         <div class="header-nav-right">
             <img src="images/bell.svg" alt="bell">
-            <img src="images/profile.jpg" alt="profile-icon">
-            <div class="name">Nova Cat</div>
+            <img class="pfp" src="images/avogado.jpeg" alt="profile-icon">
+            <div class="name">NovaCat35</div>
         </div>
         <div class="header-nav-bottom">
             <div class="greetings">
-                <img src="images/profile.jpg" alt="profile-icon">
+                <img class="pfp" src="images/avogado.jpeg" alt="profile-icon">
                 <div>
                     <p>Hi there, </p>
-                    <p>Nova Cat</p>
+                    <p>NovaCat35</p>
                 </div>
             </div>
             <div class="buttons-container">
@@ -65,7 +68,7 @@
                 <div class="card">
                     <h1>Super Cool Project</h1>
                     <img src="images/thumbs-up.webp" alt="thumbs-up">
-                    <p>Greetings! Welcome to the dashboard, admin. This mock-up dashboard is build to explore grid/flexbox at more grand scale. Enjoy the stay and cheers 👍</p>
+                    <p>Greetings and welcome to the dashboard! This mock-up admin dashboard is build to explore grid/flexbox at more grand scale. Enjoy the stay and happy viewing 👍</p>
                     <div class="icons-container">
                         <div tabIndex="0"><img src="images/star-outline.svg" alt="star-icon" ></div>
                         <a href="https://novacat35.github.io/admin-dashboard/"><img src="images/eye.svg" alt="eye-icon"></a>
@@ -130,15 +133,15 @@
                 <div class="card">
                     <div class="announcement">
                         <h1>Site Maintenance</h1>
-                        <p>CSS not working as intended? Pain. Dealing with browser compatibility woes? Nightmarish. Future projects on the way? You betcha!</p>
+                        <p>Hoping to add more to this page as I continue learning about development. Will there be more future projects on the way? You betcha!</p>
                     </div>
                     <div class="announcement">
                         <h1>Community Share Day</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, tempora!</p>
+                        <p>CSS not working as intended? Pain. Dealing with browser compatibility woes? Nightmarish. Stack? Overflow.</p>
                     </div>
                     <div class="announcement">
                         <h1>Updated Privacy Policy</h1>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, tempora!</p>
                     </div>
                 </div>
             </div>
@@ -146,30 +149,38 @@
                 <h1 >Trending</h1>
                 <div class="card">
                     <div class="profile-info">
-                        <img src="images/profile.jpg" alt="profile-icon">
+                        <div class="pfp-container">
+                            <img id="alphonse" src="images/alphonse.jpeg" alt="profile-icon">
+                        </div>
                         <div>
-                            <div class="user">@alphonse</div>
+                            <div class="user">@alphonseElric</div>
                             <p>Cat Enthusiast</p>
                         </div>
                     </div>
                     <div class="profile-info">
-                        <img src="images/profile.jpg" alt="profile-icon">
+                        <div class="pfp-container">
+                            <img id="link" src="images/link(zelda).jpeg" alt="profile-icon">
+                        </div>
                         <div>
                             <div class="user">@link</div>
                             <p>Legend of Zelda Fan</p>
                         </div>
                     </div>
                     <div class="profile-info">
-                        <img src="images/profile.jpg" alt="profile-icon">
+                        <div class="pfp-container">
+                            <img id="kagura" src="images/kagura.jpeg" alt="profile-icon">
+                        </div>
                         <div>
-                            <div class="user">@wheatley</div>
-                            <p>Wheatley Aperture Founder</p>
+                            <div class="user">@kagura</div>
+                            <p>Sukonbu Queen</p>
                         </div>
                     </div>
                     <div class="profile-info">
-                        <img src="images/profile.jpg" alt="profile-icon">
+                        <div class="pfp-container">
+                            <img id="layton" src="images/professor-layton.jpeg" alt="profile-icon">
+                        </div>
                         <div>
-                            <div class="user">@layton</div>
+                            <div class="user">@Hershel_Layton</div>
                             <p>Professor Layton</p>
                         </div>
                     </div>
@@ -177,5 +188,11 @@
             </div>
         </div>
     </div>
+    <footer>
+        Copyright © 2023 NovaCat35
+        <a href="https://github.com/NovaCat35">
+            <img src="images/github.svg" alt="github icon">
+        </a>
+    </footer>
 </body>
 </html>
