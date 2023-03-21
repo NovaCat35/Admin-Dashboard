@@ -4,6 +4,14 @@ Welcome to the dashboard! This admin dashboard mock-up to put into practice what
 
 Live demo: https://novacat35.github.io/admin-dashboard/ 
 
+| Desktop/Laptop |
+| -------------- |
+|<img width="1440" alt="Screenshot 2023-03-21 at 4 37 18 PM" src="https://user-images.githubusercontent.com/54908064/226735251-71d31449-b614-4f67-b464-21d10a34861a.png">|
+
+| Mobile |
+| -------------- |
+|<img width="306" alt="Screenshot 2023-03-21 at 4 42 15 PM" src="https://user-images.githubusercontent.com/54908064/226735858-b8843ea0-c24a-405b-bd68-a67cc157e67a.png">|
+
 ## Images Sources
 Material Design Icons: https://pictogrammers.com/library/mdi/
 <br>

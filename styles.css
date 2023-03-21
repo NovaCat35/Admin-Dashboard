@@ -70,6 +70,7 @@ header {
     padding: 10px;
     font-family: var(--header-font);
     box-shadow: 0 1px 5px 1px var(--light-grey);
+    transition: all .3s ease-in-out;
 }
 header img {
     width: 30px;
@@ -82,9 +83,15 @@ header .header-nav-bottom .pfp {
     width: var(--large-pfp);
 }
 .header-nav-right, .header-nav-bottom {
+    transition: .3s;
     gap: 17px;
 }
 .search-container1, .header-nav-right {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
     display: flex;
     align-items: center;
 }
@@ -105,12 +112,13 @@ header .header-nav-bottom .pfp {
     width: 100%;
     padding: 5px 10px;
 }
-.container2 {
+.container2, .header-nav-right .divider {
     display: none;
 }
 .header-nav-right {
     justify-content: end;
     padding-right: 30px;
+    gap: 18px;
 } 
 .header-nav-right .name {
     color: var(--black-text);
@@ -126,6 +134,11 @@ header .header-nav-bottom .pfp {
     animation: stretch-bounce .5s ease-in-out forwards; 
 }
 .greetings, .buttons-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -490,6 +503,47 @@ footer img:hover {
     }
 }
 
+@media screen and (max-width: 795px){
+    .greetings div {
+        font-size: clamp(.5rem, 1.8vw, 1rem);
+    }
+    .header-nav-right .name {
+        font-size: 20px;
+    }
+    .greetings p:nth-child(2) {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 795px){
+    .search-container1 {
+        width: 90%;
+    }
+    .header-nav-right .name {
+        font-size: 20px;
+    }
+    .header-nav-right {
+        gap: 13px;
+        padding-right: 15px;
+    }
+    .header-nav-right .divider {
+        display: inline-block;
+        background-color: rgb(237, 240, 245);
+        height: 40px;
+        width: 1px;
+    }
+    .greetings div {
+        font-size: clamp(.5rem, 1.8vw, 1rem);
+    }
+    .greetings p:nth-child(2) {
+        font-size: 1.2rem;
+    }
+    .header-nav-bottom .greetings div {
+        display: none;
+    }
+}
+
+/**** MOBILE SIZE [VERTICAL] ****/
 @media screen and (max-width: 700px) {  
     body {
         grid-template: 120px 2fr 70px / 70px 1fr;
@@ -572,14 +626,14 @@ footer img:hover {
         transition: .3s;
     }
     .search-container2:focus > input {
-        width: 40vw;
+        width: 45vw;
         padding: 0 6px;
         /** BELOW is only for expanding from right to left **/
         /* height: 45px; */
     }
     .search-container2 input:focus,
     .search-container2 input:not(:placeholder-shown) {
-        width: 40vw;
+        width: 45vw;
         padding: 0 6px;
     }
 
