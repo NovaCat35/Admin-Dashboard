@@ -84,7 +84,7 @@ header .header-nav-bottom .pfp {
 .header-nav-right, .header-nav-bottom {
     gap: 17px;
 }
-.search-container1, .header-nav-right, .header-nav-bottom {
+.search-container1, .header-nav-right {
     display: flex;
     align-items: center;
 }
@@ -119,7 +119,7 @@ header .header-nav-bottom .pfp {
 .header-nav-right > img:first-of-type {
     filter: var(--hex-orange-filter);
 }
-.header-nav-right img:first-of-type:hover, .search-container1 .search-button:hover {
+.header-nav-right img:first-of-type:hover, .search-container1 .search-button:hover, .container2 .search-button:hover{
     animation: shake .5s ease-in-out forwards;
 }
 .header-nav-right img:first-of-type:focus:active {
@@ -492,14 +492,14 @@ footer img:hover {
 
 @media screen and (max-width: 700px) {  
     body {
-        grid-template: 100px 2fr 70px / minmax(30px, 70px) 2fr;
+        grid-template: 120px 2fr 70px / 70px 1fr;
     }
     header {
-        grid-template-rows: 80px;
+        grid-template-rows: 50px 60px;
     }
     .header-nav-bottom {
-        grid-row: 1;
-        grid-column: 1;
+        grid-template-columns: 1fr;
+        justify-items: center;
         margin: 0;
     }
     .header-nav-right > div:last-of-type, .header-nav-bottom .greetings {
@@ -511,7 +511,6 @@ footer img:hover {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 70px;
         padding: 10px;
     }
     .sidebar-header {
@@ -528,8 +527,9 @@ footer img:hover {
     .container2 {
         display: inline-block;
         position: relative;
-        width: 50px;
-        height: 50px;
+        padding-left: 10px;
+        width: 40px;
+        height: 40px;
     }
     /***  
         By having the absolute here instead of in the input
@@ -537,11 +537,11 @@ footer img:hover {
         expand from right to left instead, so I've put 'absolute' in the input instead.
     ***/
     .search-container2 {
-        /* position: absolute; */
+        position: absolute;
         display: flex;
         align-items: center;
         background: white;
-        height: 45px;
+        height: 35px;
         border-radius: 50px;
         padding: 5px;
         z-index: 1;
@@ -555,31 +555,31 @@ footer img:hover {
         font-size: var(--search-font-size);
         transition: .3s;
         line-height: 40px;
+        background: none;
         /** BELOW is only for expanding from right to left **/
-        /* background: none; */
-        background-color: white;
+        /* background-color: white;
         border-radius: 50px;
         position: absolute;
         left: auto;
-        right: 50px; 
+        right: 50px;  */
     }
     .search-container2 .search-button {
-        width: 35px;
-        height: 35px;
+        width: 25px;
+        height: 25px;
         border-radius: 50px;
         cursor: pointer;
         background-color: #ffffff;
         transition: .3s;
     }
     .search-container2:focus > input {
-        width: 240px;
+        width: 40vw;
         padding: 0 6px;
         /** BELOW is only for expanding from right to left **/
-        height: 100%;
+        /* height: 45px; */
     }
     .search-container2 input:focus,
     .search-container2 input:not(:placeholder-shown) {
-        width: 240px;
+        width: 40vw;
         padding: 0 6px;
     }
 
