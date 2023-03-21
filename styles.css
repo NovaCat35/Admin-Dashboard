@@ -2,32 +2,34 @@
     --black-text: rgb(0, 0, 0);
     --dark-text: rgb(65, 69, 81);
     --white-text: white;
-    --white-grey-text: rgb(208, 208, 208);
+    --white-grey-text: rgb(222, 222, 222);
     --light-text: rgb(125, 126, 138);
     --light-grey: rgb(182, 185, 200);
 
-    --button-color:  #cd4444;
-    --card-border-color: #1849a3;
-    --hover-color: #956ad9;
+    --button-color:  #cd3b3b;
+    --card-border-color: #ecad00;
+    --hover-color: #a50230;
     --h1-text-shadow: 1px 2px 2px #8b92a7;
 
     --card-background: rgb(246, 246, 246);
     --sidebar-background: rgb(1, 23, 43);
-    --header-background: linear-gradient(0.25turn, #1e499f, 20%, #3984e5, 75%, #9b76ed);
-    --main-background: rgb(220, 228, 237);
+    --header-background: linear-gradient(0.25turn, #1e499f, 20%, #3984e5, 75%, #e88973);
+    --main-background: rgb(221, 229, 238);
 
-    --title-font-size: 2rem;
+    --title-font-size: 1.8rem;
+    --search-font-size: 16px;
     --button-font: 'Beth Ellen', cursive;
     --title-font: 'Merriweather', serif;
     --header-font: 'Fredericka the Great', cursive;
-    --sidebar-font: 'Ewert', cursive;    
+    --sidebar-font: 'Libre Baskerville', serif;
     --project-title-font: 'Libre Baskerville', serif;
     --project-font: 'Quicksand', sans-serif;
     --announcement-title-font: 'Lora', serif;
     --announcement-font: 'Raleway', sans-serif;
 
-    --hex-orange-filter: brightness(0) saturate(100%) invert(78%) sepia(77%) saturate(1753%) hue-rotate(349deg) brightness(111%) contrast(96%);    
     --hex-grey-filter: invert(81%) sepia(97%) saturate(3713%) hue-rotate(175deg) brightness(77%) contrast(81%);
+    --hex-orange-filter: brightness(0) saturate(100%) invert(78%) sepia(77%) saturate(1753%) hue-rotate(349deg) brightness(111%) contrast(96%);    
+    --hex-blue-filter: invert(88%) sepia(21%) saturate(3441%) hue-rotate(170deg) brightness(99%) contrast(100%);
 
     --small-pfp: 45px;
     --header-pfp: 35px;
@@ -49,7 +51,8 @@ html, body {
 body {
     background: var(--main-background);
     display: grid;
-    grid-template: 150px 2fr 70px / minmax(30px, 250px) 2fr;
+    grid-template: 170px 2fr 70px / minmax(30px, 250px) 2fr;
+    transition: all .5s ease-in-out;
 }
 
 a {
@@ -61,10 +64,12 @@ header {
     background: var(--header-background);
     grid-column: 2;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: 80px 40px;
+    align-items: center;
     padding: 10px;
     font-family: var(--header-font);
+    box-shadow: 0 1px 5px 1px var(--light-grey);
 }
 header img {
     width: 30px;
@@ -76,17 +81,32 @@ header .header-nav-right img.pfp {
 header .header-nav-bottom .pfp {
     width: var(--large-pfp);
 }
-.search, .header-nav-right, .header-nav-bottom {
-    display: flex;
-    align-items: center;
+.header-nav-right, .header-nav-bottom {
     gap: 17px;
 }
-.search input {
-    appearance: none;
-    border: 1px solid black;
+.search-container1, .header-nav-right, .header-nav-bottom {
+    display: flex;
+    align-items: center;
+}
+.search-container1 {
+    justify-self: center;
+    background: white;
     border-radius: 10px;
-    padding: 5px;
-    width: 80%;
+    width: 95%;
+    height: 35px;
+    padding-left: 5px;
+}
+.search-container1 input {
+    outline: none;
+    appearance: none;
+    border: none;
+    font-size: var(--search-font-size);
+    border-radius: 15px;
+    width: 100%;
+    padding: 5px 10px;
+}
+.container2 {
+    display: none;
 }
 .header-nav-right {
     justify-content: end;
@@ -96,11 +116,14 @@ header .header-nav-bottom .pfp {
     color: var(--black-text);
     font-size: 25px;
 }
-.header-nav-right img:first-of-type {
+.header-nav-right > img:first-of-type {
     filter: var(--hex-orange-filter);
 }
-.header-nav-right img:first-of-type:hover {
+.header-nav-right img:first-of-type:hover, .search-container1 .search-button:hover {
     animation: shake .5s ease-in-out forwards;
+}
+.header-nav-right img:first-of-type:focus:active {
+    animation: stretch-bounce .5s ease-in-out forwards; 
 }
 .greetings, .buttons-container {
     display: flex;
@@ -110,11 +133,13 @@ header .header-nav-bottom .pfp {
 .greetings {
     color: var(--white-text);
     font-size: 20px;
+    margin-left: 5px;
 }
 .header-nav-bottom {
     grid-column: span 2;
     display: grid;
     grid-template-columns: 3fr 1fr;
+    margin-top: 30px;
 }
 .greetings p:nth-child(2) {
    font-size: 1.5rem;
@@ -122,7 +147,7 @@ header .header-nav-bottom .pfp {
 .buttons-container button{
     appearance: none;
     border: none;
-    border-radius: 18px;
+    border-radius: 15px;
     color: var(--white-text);
     padding: 1.5px 25px;
     background-color: var(--button-color);
@@ -144,6 +169,7 @@ header .header-nav-bottom .pfp {
     padding: 50px;
     color: var(--white-grey-text);
     background-color: var(--sidebar-background);
+    transition: all .3s ease-in-out ;
 }
 .sidebar-header {
     display: flex;
@@ -160,7 +186,8 @@ header .header-nav-bottom .pfp {
 }
 .sidebar-nav1, .sidebar-nav2{
     margin-top: 20px;
-    font-size: 1rem;
+    font-family: var(--sidebar-font);
+    font-size: .9rem;
 }
 .sidebar-nav2 {
     margin-top: 50px;
@@ -187,12 +214,14 @@ header .header-nav-bottom .pfp {
 .nav-icon:hover {
     transform: scale(1.2);
 }
+.nav-icon:focus {
+    transform: scale(1.2);
+}
 .nav-icon img {
     width: 30px;
     /* to change the color of the svg icons [see CSS Filter property] */
     filter: var(--hex-grey-filter);
 }
-
 
 /*** MAIN CONTENT ***/
 /* Overall */
@@ -274,9 +303,9 @@ header .header-nav-bottom .pfp {
     filter: var(--hex-orange-filter);    
     animation: stretch-bounce .4s ease-in-out forwards;
 }
-.icons-container div:focus {
+.icons-container div:focus:active {
     filter: var(--hex-orange-filter);
-    animation: expand-fade .8s ease-in-out forwards;
+    animation: expand-fade .3s ease-in-out forwards;
 }
 .icons-container a:first-of-type img:hover {
     animation: blink .2s ease-in-out forwards;
@@ -454,9 +483,104 @@ footer img:hover {
     }
 }
 
+/* ALLOW main content cards to all be in one column*/
 @media screen and (max-width: 910px){
     .main-content {
         grid-template-columns: 1fr;
     }
 }
 
+@media screen and (max-width: 700px) {  
+    body {
+        grid-template: 100px 2fr 70px / minmax(30px, 70px) 2fr;
+    }
+    header {
+        grid-template-rows: 80px;
+    }
+    .header-nav-bottom {
+        grid-row: 1;
+        grid-column: 1;
+        margin: 0;
+    }
+    .header-nav-right > div:last-of-type, .header-nav-bottom .greetings {
+        display: none;
+    }
+    /* ******************************** */
+    /* Shrinking sidebar */
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70px;
+        padding: 10px;
+    }
+    .sidebar-header {
+        margin-top: 20px;
+    }
+    .sidebar-header div, .sidebar-nav1 span, .sidebar-nav2 span{
+        display: none;
+    }
+    /* ******************************** */
+    /* Expanding|shrinking search bar */
+    .search-container1 {
+        display: none;
+    }
+    .container2 {
+        display: inline-block;
+        position: relative;
+        width: 50px;
+        height: 50px;
+    }
+    /***  
+        By having the absolute here instead of in the input
+        we can get the search to go from left to right. But we want to 
+        expand from right to left instead, so I've put 'absolute' in the input instead.
+    ***/
+    .search-container2 {
+        /* position: absolute; */
+        display: flex;
+        align-items: center;
+        background: white;
+        height: 45px;
+        border-radius: 50px;
+        padding: 5px;
+        z-index: 1;
+    }
+    .search-container2 input {
+        appearance: none;
+        outline: none;
+        border: none;
+        width: 0;
+        padding: 0;
+        font-size: var(--search-font-size);
+        transition: .3s;
+        line-height: 40px;
+        /** BELOW is only for expanding from right to left **/
+        /* background: none; */
+        background-color: white;
+        border-radius: 50px;
+        position: absolute;
+        left: auto;
+        right: 50px; 
+    }
+    .search-container2 .search-button {
+        width: 35px;
+        height: 35px;
+        border-radius: 50px;
+        cursor: pointer;
+        background-color: #ffffff;
+        transition: .3s;
+    }
+    .search-container2:focus > input {
+        width: 240px;
+        padding: 0 6px;
+        /** BELOW is only for expanding from right to left **/
+        height: 100%;
+    }
+    .search-container2 input:focus,
+    .search-container2 input:not(:placeholder-shown) {
+        width: 240px;
+        padding: 0 6px;
+    }
+
+}

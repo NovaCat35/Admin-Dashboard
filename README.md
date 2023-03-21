@@ -6,12 +6,19 @@ Live demo: https://novacat35.github.io/admin-dashboard/
 
 ## Images Sources
 Material Design Icons: https://pictogrammers.com/library/mdi/
+<br>
 Google Icons: https://fonts.google.com/icons
+<br>
 alphonse pfp: https://tenleid.tumblr.com/post/93092679494/amp
+<br>
 Link (Zelda) pfp:
-https://i.pinimg.com/originals/b5/e7/2f/b5e72f0fe73971192139f02240b5fa9d.jpg
+https://i.pinimg.com/originals/b5/e7/2f/b5e72f0fe73971192139f02240b5fa9d.
+jpg
+<br>
 Professor Layton: https://www.deviantart.com/wredwrat/art/Lunch-break-157327990
+<br>
 Kagura: https://www.tumblr.com/gintamaedits/667560172607176704/kagura-icons
+<br>
 profile(avogado6): https://www.avogado6.com/
 
 # Color Palettes

@@ -13,12 +13,18 @@
 </head>
 <body>
     <header>
-        <div class="search">
-            <img src="images/magnify.svg" alt="search-icon" class="search-icon">
-            <input type="search" class="searchbar" placeholder="search">
+        <div class="search-container1" tabindex="0">
+            <img src="images/magnify.svg" alt="search-button" class="search-button">
+            <input type="search" class="searchbar" placeholder="Search">
         </div>
         <div class="header-nav-right">
-            <img src="images/bell.svg" alt="bell">
+            <div class="container2">
+                <div class="search-container2" tabindex="0">
+                    <input type="search" class="searchbar" placeholder="Search">
+                    <img src="images/magnify.svg" alt="search-button" class="search-button">
+                </div>
+            </div>
+            <img src="images/bell.svg" alt="bell" tabindex="0">
             <img class="pfp" src="images/avogado.jpeg" alt="profile-icon">
             <div class="name">NovaCat35</div>
         </div>
@@ -45,19 +51,37 @@
         </div>
         <div class="sidebar-nav1">
             <ul class="nav">
-                <li class="nav-icon"><img class="home" src="images/home.svg" alt="home-icon"> <a href="">Home</a></li>
-                <li class="nav-icon"><img class="person" src="images/person.svg" alt="person-icon"><a href="#">Profile</a></li>
-                <li class="nav-icon"><img class="message" src="images/message.svg" alt="message-icon"><a href="#">Messages</a></li>
-                <li class="nav-icon"><img class="history" src="images/history.svg" alt="history-icon"><a href="#">History</a></li>
-                <li class="nav-icon"><img class="task" src="images/task.svg" alt="task-icon"><a href="#">Tasks</a></li>
-                <li class="nav-icon"><img class="community" src="images/community.svg" alt="community-icon"><a href="#">Communities</a></li>
+                <a href="">
+                    <li class="nav-icon"><img class="home" src="images/home.svg" alt="home-icon"><span>Home</span></li>
+                </a>
+                <a href="#">
+                    <li class="nav-icon"><img class="person" src="images/person.svg" alt="person-icon"><span>Profile</span></li>
+                </a>
+                <a href="#">
+                    <li class="nav-icon"><img class="message" src="images/message.svg" alt="message-icon"><span>Messages</span></li>
+                </a>
+                <a href="#">
+                    <li class="nav-icon"><img class="history" src="images/history.svg" alt="history-icon"><span>History</span></li>
+                </a>
+                <a href="#">
+                    <li class="nav-icon"><img class="task" src="images/task.svg" alt="task-icon"><span>Tasks</span></li>
+                </a>
+                <a href="#">
+                    <li class="nav-icon"><img class="community" src="images/community.svg" alt="community-icon"><span>Communities</span></li>
+                </a>
             </ul>
         </div>
         <div class="sidebar-nav2">
             <ul class="nav">
-                <li class="nav-icon"><img class="cog" src="images/cog.svg" alt="profile-icon"><a href="">Settings</a></li>
-                <li class="nav-icon"><img class="support" src="images/support.svg" alt="support-icon"><a href="#">Support</a></li>
-                <li class="nav-icon"><img class="privacy" src="images/privacy.svg" alt="privacy-icon"><a href="#">Privacy</a></li>
+                <a href="#">
+                    <li class="nav-icon"><img class="cog" src="images/cog.svg" alt="profile-icon"><span>Settings</span></li>
+                </a>
+                <a href="#">
+                    <li class="nav-icon"><img class="support" src="images/support.svg" alt="support-icon"><span>Support</span></li>
+                </a>
+                <a href="#">
+                    <li class="nav-icon"><img class="privacy" src="images/privacy.svg" alt="privacy-icon"><span>Privacy</span></li>
+                </a>
             </ul>
         </div>
     </div>
@@ -67,7 +91,7 @@
             <div class="card-container">
                 <div class="card">
                     <h1>Super Cool Project</h1>
-                    <img src="images/thumbs-up.webp" alt="thumbs-up">
+                    <img src="images/thumbs-up.jpeg" alt="thumbs-up">
                     <p>Greetings and welcome to the dashboard! This mock-up admin dashboard is build to explore grid/flexbox at more grand scale. Enjoy the stay and happy viewing 👍</p>
                     <div class="icons-container">
                         <div tabIndex="0"><img src="images/star-outline.svg" alt="star-icon" ></div>
